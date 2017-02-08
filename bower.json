@@ -1,0 +1,27 @@
+{
+  "name": "skygate_angular-test",
+  "authors": [
+    "marckraw <marckraw@icloud.com>"
+  ],
+  "description": "projekt na zadanie rekrutacyjne dla skygate",
+  "main": "",
+  "keywords": [
+    "angular",
+    "skygate",
+    "javascript",
+    "frontend"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}

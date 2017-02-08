@@ -1,0 +1,32 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+
+/* SCROLLBAR MODYFICATIONS */
+.scrollbar-style::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.scrollbar-style::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #aaa; //#F
+}
+
+.scrollbar-style::-webkit-scrollbar-thumb
+{
+  background-color: #aaa;
+  border: 2px solid #aaa;
+}

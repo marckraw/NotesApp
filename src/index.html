@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="NotesList">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>NotesApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<div class="note-app container clearfix" ng-controller="MainNotesController as MainNotesCtrl">
+
+  <ul class="notes-list scrollbar-style">
+    <button class="btn" ng-hide="MainNotesCtrl.adding" ng-click="MainNotesCtrl.addNote()">Dodaj</button>
+    <li ng-repeat="singleNote in MainNotesCtrl.testowyJSON track by $index" class="notes-list__short-note" ng-click="MainNotesCtrl.showNote($index)">
+      <directive-short-note></directive-short-note>
+    </li>
+  </ul>
+
+  <div class="note clearfix">
+    <div class="note__text-content">
+
+      <textarea ng-show="MainNotesCtrl.adding || MainNotesCtrl.editing" ng-model="MainNotesCtrl.noteTextContent"></textarea>
+      <p class="note__text" ng-hide="MainNotesCtrl.editing || MainNotesCtrl.adding">{{ MainNotesCtrl.noteTextContent }} </p>
+
+      <button class="btn" ng-hide="MainNotesCtrl.editing || MainNotesCtrl.adding" ng-click="MainNotesCtrl.editNote()">Edycja</button>
+      <button class="btn" ng-hide="MainNotesCtrl.adding" ng-click="MainNotesCtrl.delNote()">Usuń</button>
+      <button class="btn" ng-show="MainNotesCtrl.adding" ng-click="MainNotesCtrl.submitNewNote()">Dodaj nowa</button>
+      <button class="btn" ng-show="MainNotesCtrl.editing" ng-click="MainNotesCtrl.saveEditedNote()">Zapisz</button>
+    </div>
+    <div class="note__img-content">
+      <img ng-repeat="img in MainNotesCtrl.imgs track by $index" class="note__img" ng-src="{{ img }}" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- build:js js/wholeApp.min.js -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="js/services.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/controllers.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

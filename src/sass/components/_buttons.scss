@@ -1,0 +1,20 @@
+.btn {
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: $base__font-weight;
+  background-color: $base__button-bgColor;
+  &:hover {
+    cursor: pointer;
+    background: $base__button-hoverBgColor;
+  }
+  &--success {
+    background-color: $base__success-color; // success green
+    &:hover {
+      background-color: $base__danger-color;
+    }
+  }
+}
+
